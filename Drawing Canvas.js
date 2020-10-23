@@ -3,6 +3,11 @@ const ctx = canvas.getContext('2d');
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
+let drawMethod = {
+    strokeStyle: 'black',
+    lineWidth: 5,
+}
+
 let painting = false;
 
 function start(e) {
@@ -19,8 +24,9 @@ function draw(e) {
     if (!painting) {
         return
     }
-    ctx.lineWidth = 5;
+    ctx.lineWidth = drawMethod.lineWidth;
     ctx.lineCap = 'round';
+    ctx.strokeStyle = drawMethod.strokeStyle;
     ctx.lineTo(e.clientX, e.clientY);
     ctx.stroke();
     ctx.beginPath();
