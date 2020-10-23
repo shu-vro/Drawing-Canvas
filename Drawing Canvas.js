@@ -5,8 +5,9 @@ canvas.width = window.innerWidth;
 
 let painting = false;
 
-function start() {
+function start(e) {
     painting = true;
+    draw(e);
 }
 
 function finish() {
